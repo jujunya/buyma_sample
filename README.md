@@ -1,32 +1,14 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-
 ## itemテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|item_num|integer|null: false, unique: true|
-|name|string|null: false, index: true|
+|item_num|references|null: false, unique: true|
+|name|references|null: false, index: true|
 |price|integer|null: false|
 |stock|integer|null: false|
 |item_description|text|null: false|
-|category_id|integer|null: false, foreign_key: true|
-|shop_id|integer|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|shop_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :category
@@ -64,8 +46,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|top_categorie|string|index: true, null: false, unique: true|
-|sub_categorie|string|index: true, null: false, unique: true|
+|top_category|string|index: true, null: false, unique: true|
+|sub_category|string|index: true, null: false, unique: true|
 
 ### Association
 - has_many :items
@@ -76,7 +58,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|items_id|integer|null: false, foreign_key: true|
+|items_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -87,11 +69,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|shop_introduction|text|null: false, foreign_key: true|
-|self_introduction|text|null: false, foreign_key: true|
-|logo|integer|null: false, foreign_key: true|
-|heder_image|integer|null: false, foreign_key: true|
-|blood_type_id|integer|null: false, foreign_key: true|
+|shop_introduction|text|null: false|
+|self_introduction|text|null: false|
+|logo|integer|null: false|
+|heder_image|integer|null: false|
+|blood_type_id|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -114,15 +96,15 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |member_num|string|null: false, unique: true|
-|mail|text|null: false, foreign_key: true|
-|password|text|null: false, foreign_key: true|
-|name|integer|null: false, foreign_key: true|
-|tel|integer|null: false, foreign_key: true|
-|post_num|integer|null: false, foreign_key: true|
-|address|integer|null: false, foreign_key: true|
-|birthdays_id|integer|null: false, foreign_key: true|
-|gender_id|integer|null: false, foreign_key: true|
-|shops_id|integer|null: false, foreign_key: true|
+|mail|text|null: false|
+|password|text|null: false|
+|name|integer|null: false|
+|tel|integer|null: false|
+|post_num|integer|null: false|
+|address|integer|null: false|
+|birthdays_id|references|null: false, foreign_key: true|
+|gender_id|references|null: false, foreign_key: true|
+|shops_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :gender
@@ -160,7 +142,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |order_num|integer|null: false, unique: true|
-|cart_id|integer|null: false, foreign_key: true|
+|cart_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :cart
@@ -171,9 +153,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 |quantity|integer|null: false|
-|order_id|integer|null: false, foreign_key: true|
+|order_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :order
@@ -185,7 +167,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |total_price|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -195,9 +177,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 |quantity|integer|null: false|
-|cart_id|integer|null: false, foreign_key: true|
+|cart_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -208,10 +190,14 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :item
+
+
+
+![database](https://user-images.githubusercontent.com/40683059/50052510-891b3900-0168-11e9-99e1-c2c43817bbf5.png)
 

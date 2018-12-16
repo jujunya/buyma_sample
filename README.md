@@ -1,4 +1,4 @@
-## itemテーブル
+## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -73,22 +73,9 @@
 |self_introduction|text|null: false|
 |logo|integer|null: false|
 |heder_image|integer|null: false|
-|blood_type_id|references|null: false, foreign_key: true|
-
 
 ### Association
-- belongs_to :blood_type
 - has_many :items
-
-
-## blood_typesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-
-### Association
-- has_many :users
 
 
 ## usersテーブル
@@ -102,39 +89,16 @@
 |tel|integer|null: false|
 |post_num|integer|null: false|
 |address|integer|null: false|
-|birthdays_id|references|null: false, foreign_key: true|
-|gender_id|references|null: false, foreign_key: true|
+|gender|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
 |shops_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :gender
-- belongs_to :birthday
 - has_many :carts
 - has_many :items, through :item_carts
 - has_many :items, through :item_likes
-
-
-
-## birthdaysテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|year|integer|null: false|
-|month|integer|null: false|
-|day|integer|null: false|
-
-### Association
-- has_many :users
-
-
-## genderテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many :users
 
 
 ## ordersテーブル
@@ -173,6 +137,7 @@
 - belongs_to :user
 - has_many :orders
 
+
 ## item_cartsテーブル
 
 |Column|Type|Options|
@@ -199,5 +164,5 @@
 
 
 
-![database](https://user-images.githubusercontent.com/40683059/50052510-891b3900-0168-11e9-99e1-c2c43817bbf5.png)
 
+![database](https://user-images.githubusercontent.com/40683059/50054507-e8d40d00-0185-11e9-907f-05bed2311390.png)

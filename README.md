@@ -34,8 +34,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|sizes_id|integer|null: false, unique: true|
-|items_id|integer|null: false, unique: true|
+|sizes_id|references|null: false, foreign_key: true|
+|items_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :size
@@ -161,7 +161,6 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-
 
 
 

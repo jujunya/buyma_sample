@@ -46,7 +46,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|top_category|string|index: true, null: false, unique: true|
+|main_category|string|index: true, null: false, unique: true|
 |sub_category|string|index: true, null: false, unique: true|
 
 ### Association
@@ -70,7 +70,7 @@
 |------|----|-------|
 |name|string|null: false, unique: true|
 |shop_introduction|text|null: false|
-|self_introduction|text|null: false|
+|seller_introduction|text|null: false|
 |logo|integer|null: false|
 |heder_image|integer|null: false|
 

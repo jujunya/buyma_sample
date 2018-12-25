@@ -1,0 +1,72 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Buyma
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      .announce
+        .announce-image
+          = image_tag 'pc_header.jpg'
+      .header-main
+        .header-main-logo
+          = image_tag 'logo.png'
+        %ul.header-icon-nav
+          %li.icon-nav__list.membership-register
+            %a
+              今すぐ会員登録
+          %li.icon-nav__list.membership-login
+            %a
+              ログイン
+          %li.icon-nav__list.icon-want
+            %a
+              = fa_icon 'heart'
+          %li.icon-nav__list.icon-cart
+            %a
+              = fa_icon 'shopping-cart'
+          %li.icon-nav__list.icon-question
+            %a
+              = fa_icon 'question'
+      .header-nav
+        %ul.main-cate
+          %li.main-cate__list.main-cate__list-sale
+            .sale-logo
+              %a.sale-link
+                = image_tag 'tab_sale.png'
+          %li.main-cate__list.main-cate__list-women
+            .women-logo
+              %a.women-link
+                = image_tag 'tab_women.png'
+          %li.main-cate__list.main-cate__list-men
+            .men-logo
+              %a.men-link
+                = image_tag 'tab_men.png'
+          %li.main-cate__list.main-cate__list-kids
+            .kids-logo
+              %a.kids-link
+                = image_tag 'tab_kids.png'
+          %li.main-cate__list.main-cate__list-beauty
+            .beauty-logo
+              %a.beauty-link
+                = image_tag 'tab_beauty.png'
+          %li.main-cate__list.main-cate__list-home
+            .home-logo
+              %a.home-link
+                = image_tag 'tab_home.png'
+          %li.main-cate__list.main-cate__list-allin
+            .allin-logo
+              %a.allin-link
+                <!--仮-->
+                = image_tag 'tab_home.png'
+      .header-search
+        .search-form
+          
+        .search-list
+          
+      = yield
+      
+      .footer
+        = image_tag 'footer.jpg'

@@ -1,0 +1,150 @@
+//サイト全体をブロック化
+.wrapper{
+  
+  //最上部広告
+  .announce{
+    width: 100%;
+    background-color: #4E4E4E;
+    
+    //広告画像
+    .announce-image{
+      width: 980px;
+      margin: 0 auto;
+    }
+    
+  }
+  //ロゴ、icon行
+  .header-main{
+    width: 980px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+    
+      //ロゴ
+      .header-main-logo{
+        width: 130px;
+        padding-top: 22px;
+        margin: 0 auto;
+      }
+
+      //iconブロック
+      .header-icon-nav{
+        width: 290px;
+        margin-right: 0;
+        position: absolute;
+        top: 25px;
+        right: 0px;
+        
+        //icon 共通
+        .icon-nav__list{
+          display: inline-block;
+        }
+        //会員登録
+        .membership-register{
+          font-size: 13px;
+          width: 102px;
+        }
+        //ログイン
+        .membership-login{
+          font-size: 13px;
+          width: 70px;
+        }
+        //ほしいものリスト
+        .icon-want{
+          width: 30px;
+        }
+        //カート
+        .icon-cart{
+          width: 30px;
+        }
+        //ヘルプ
+        .icon-question{
+          width: 10px;
+        }
+      }
+    }
+  //カテゴリ行
+  .header-nav{
+    width: 100%;
+    background-color: #333333;
+   
+    //カテゴリ
+    .main-cate{
+      width: 980px;
+      height: 42px;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing:-1em;
+      
+      //カテゴリ_リスト共通
+      .main-cate__list{
+        width: 138px;
+        display: inline-block;
+        line-height: 42px;
+        letter-spacing:normal;
+        
+      }
+      //saleカテゴリbox
+      .main-cate__list-sale{
+        background-color: #FF3145;
+      }
+      //womenカテゴリbox
+      .main-cate__list-women{
+        background-color: #333333;
+      }
+      //menカテゴリbox
+      .main-cate__list-men{
+        background-color: #333333;
+      }
+      //kidsカテゴリbox
+      .main-cate__list-kids{
+        background-color: #333333;
+      }
+      //beautyカテゴリbox
+      .main-cate__list-beauty{
+        background-color: #333333;
+      }
+      //home(lifestyle)カテゴリbox
+      .main-cate__list-home{
+        background-color: #333333;
+      }
+      //allinカテゴリbox(サイズの関係上、現在別画像設置。)
+      .main-cate__list-allin{
+        background-color: #000000;
+      }
+    }
+  }
+  //商品検索
+  .header-search{
+    
+    //単語検索
+    .search-form{
+      display: inline-block;
+    }
+    //カテゴリ検索
+    .search-list{
+      display: inline-block;
+    }
+  }
+  //スライド広告
+  .slide-contents{
+    width: 980px;
+    margin: 0 auto;
+    
+    img{
+      width: 980px;
+      height: auto;
+    }
+  }
+  
+  .footer{
+    width: 100%;
+    text-align: center;
+    background-color: #242424;
+    
+    img{
+      width: 980px;
+      height: auto;
+    }
+  }
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181227014928) do
+ActiveRecord::Schema.define(version: 20190116033556) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "top_category", null: false
@@ -21,16 +21,33 @@ ActiveRecord::Schema.define(version: 20181227014928) do
     t.index ["top_category"], name: "index_categories_on_top_category", using: :btree
   end
 
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
+  create_table "item_sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id"
+    t.integer  "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_sizes_on_item_id", using: :btree
+    t.index ["size_id"], name: "index_item_sizes_on_size_id", using: :btree
+  end
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "item_num",                       null: false
     t.string   "name",                           null: false
     t.integer  "price",                          null: false
     t.integer  "stock",                          null: false
     t.text     "item_description", limit: 65535, null: false
-    t.integer  "category_id"
-    t.integer  "shop_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "category_id"
+    t.integer  "shop_id"
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
     t.index ["shop_id"], name: "index_items_on_shop_id", using: :btree
@@ -46,4 +63,14 @@ ActiveRecord::Schema.define(version: 20181227014928) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "size",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "item_sizes", "items"
+  add_foreign_key "item_sizes", "sizes"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "shops"
 end

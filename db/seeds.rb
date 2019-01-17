@@ -6,7 +6,7 @@ require 'csv'
 #end
 
 #headerあり
-csv_data = CSV.read('db/test4.csv',headers: true)
+csv_data = CSV.read('db/test.csv',headers: true)
 csv_data.each do |data|
-  Category.create!(data.to_hash)
+  Size.create!(data.to_hash)
 end

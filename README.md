@@ -17,25 +17,25 @@
 - has_many :orders, through: :item_orders
 - has_many :images
 - has_many :users, through: :item_likes
-- has_many :sezes, through: :sizes_item
+- has_many :sizes, through: :item_sizes
 
 
 ## sizesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|type|string|null: false|
+|size|string|null: false|
 
 ### Association
-- has_many :items, through: :sizes_item
+- has_many :items, through: :item_sizes
 
 
-## sizes_itemテーブル
+## item_sizesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|sizes_id|references|null: false, foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
+|size_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :size

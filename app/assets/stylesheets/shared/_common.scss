@@ -1,0 +1,50 @@
+//全ページ共通、最上部コンテンツ
+.header-main{
+  width: 980px;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
+
+    //ロゴ
+    .header-main-logo{
+      width: 130px;
+      padding-top: 22px;
+      margin: 0 auto;
+    }
+
+    //iconブロック
+    .header-icon-nav{
+      width: 290px;
+      margin-right: 0;
+      position: absolute;
+      top: 25px;
+      right: 0px;
+
+      //icon 共通
+      .icon-nav__list{
+        display: inline-block;
+      }
+      //会員登録
+      .membership-register{
+        font-size: 13px;
+        width: 102px;
+      }
+      //ログイン
+      .membership-login{
+        font-size: 13px;
+        width: 70px;
+      }
+      //ほしいものリスト
+      .icon-want{
+        width: 30px;
+      }
+      //カート
+      .icon-cart{
+        width: 30px;
+      }
+      //ヘルプ
+      .icon-question{
+        width: 10px;
+      }
+    }
+}

@@ -1,0 +1,52 @@
+//マイページ共通、leftコンテンツ
+.main-contents {
+  width: 100%;
+
+  // leftコンテンツ
+  .left-contents {
+    width: 230px;
+    height: 1200px;
+    background-color: #232323;
+    //親要素が高さの認識できなくなる
+    float: left;
+      
+    // leftコンテンツの最上部。プロフィール部分
+    .left-profile {
+      width: 230px;
+      height: 180px;
+      background-color: #232323;
+    }
+    // leftコンテンツnav
+    nav.left-nav {
+      width: 230px;
+
+      ul.mypage-contents {
+        li.contents__list {
+          background-color: #333333;
+          height: 60px;
+          color: white;
+          //liの隙間
+          margin-bottom: 1px;
+          
+          a.link-contents {
+            line-height: 60px;
+            margin-left: 20px;
+          }
+          i{
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  .right-contents {
+    float: right;
+    width: calc( 100% - 230px );
+  }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}

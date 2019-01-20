@@ -1,2 +1,61 @@
-.test
-テスト
+<!--新規出品ページ-->
+%h1.contents-title 新規出品
+= form_for([@shop, @item], html: {class: "exhibit-submit"}) do |f|
+  <!--告知-位置固定-->
+  .exhibit__fixed-info
+  <!--主要部分-->
+  .feature-area
+  
+    <!--過去の出品情報コピー-->
+    .feature-area__item-copy
+      .item-copy-w
+        %a.button-copy-icontx
+          = fa_icon 'sticky-note'
+          過去の出品情報をコピーする
+        %span.button-copy-text
+          過去の出品情報をコピーして簡単に出品が可能です
+          
+    <!--商品情報入力箇所-->
+    .feature-area__item-data
+      %h1.item-data-info 商品情報
+      %table.item-table{:border => "1", :cellpadding => "5", :cellspacing => "2"}
+        %tbody
+          %tr.item-table__tr
+            %th カテゴリ
+            %td
+              %table
+                %tbody
+                  %tr
+                    %td
+                      %a{:href => "/"} 検索する
+                    %td 直近で出品したカテゴリから選択
+          %tr.item-table__tr
+            %th 商品名
+            %td
+              = f.text_field :name, placeholder: "商品名"
+          %tr.item-table__tr
+            %th サイズ
+            %td
+              %label
+                - @sizes.each do |size|
+                  %label
+                    = f.check_box :size_ids, {multiple: true, include_hidden: false, checked: size[:checked], disabled: size[:disabled] }, size[:id]
+                    = size[:size]
+          %tr.item-table__tr
+            %th 商品イメージ
+            %td
+              = f.fields_for :images do |image|
+                = image.file_field :name
+          %tr.item-table__tr
+            %th 商品コメント
+            %td
+              = f.text_area :item_description, placeholder: "コメント"
+          %tr.item-table__tr
+            %th 在庫
+            %td
+              = f.number_field :stock
+          %tr.item-table__tr
+            %th 価格
+            %td
+              = f.text_field :price, placeholder: "価格"
+  = f.submit '入力内容を確認する', class: 'form__submit'

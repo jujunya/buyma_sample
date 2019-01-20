@@ -1,7 +1,8 @@
-//サイト全体をブロック化
+//トップページcss
+
 .wrapper{
   
-  //最上部広告
+  //広告表示
   .announce{
     width: 100%;
     background-color: #4E4E4E;
@@ -11,60 +12,10 @@
       width: 980px;
       margin: 0 auto;
     }
-    
   }
-  //ロゴ、icon行
-  .header-main{
-    width: 980px;
-    height: 70px;
-    margin: 0 auto;
-    position: relative;
-    
-      //ロゴ
-      .header-main-logo{
-        width: 130px;
-        padding-top: 22px;
-        margin: 0 auto;
-      }
-
-      //iconブロック
-      .header-icon-nav{
-        width: 290px;
-        margin-right: 0;
-        position: absolute;
-        top: 25px;
-        right: 0px;
-        
-        //icon 共通
-        .icon-nav__list{
-          display: inline-block;
-        }
-        //会員登録
-        .membership-register{
-          font-size: 13px;
-          width: 102px;
-        }
-        //ログイン
-        .membership-login{
-          font-size: 13px;
-          width: 70px;
-        }
-        //ほしいものリスト
-        .icon-want{
-          width: 30px;
-        }
-        //カート
-        .icon-cart{
-          width: 30px;
-        }
-        //ヘルプ
-        .icon-question{
-          width: 10px;
-        }
-      }
-    }
-  //カテゴリ行
-  .header-nav{
+  
+  //カテゴリコンテンツ
+  nav.header-nav{
     width: 100%;
     background-color: #333333;
    

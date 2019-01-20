@@ -1,0 +1,74 @@
+//rightコンテンツのタイトル「新規出品」
+h1.contents-title {
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  padding: 1.3em 1.4em;
+}
+//form
+form.exhibit-submit {
+  
+  //新規出品ページで表示する告知 位置固定する。
+  .exhibit__fixed-info {
+    width: 100%;
+    height: 86px;
+    background-color: #C1E4E7;
+  }
+  //主要部分
+  .feature-area {
+    padding: 26px;
+    
+    //過去の出品情報コピー
+    .feature-area__item-copy {
+      margin-bottom: 41px;
+    }
+    //ボタンとテキストdiv
+      .item-copy-w{
+        margin-top: 11px;
+      
+        //ボタン-アイコン-テキスト
+        a.button-copy-icontx {
+          margin-right: 20px;
+          padding: 1em 4em;
+          border-radius: 4px;
+          background-color: #EEEEEE;
+          border: 1px solid #ccc;
+        }
+        //テキスト
+        span.button-copy-text {
+        }
+      }
+    //商品情報入力箇所
+    .feature-area__item-data {
+      h1.item-data-info{
+        font-family: "Hiragino Kaku Gothic ProN";
+        font-weight: 700;
+        color: #6f6f6f;
+      }
+      table.item-data-table{
+        
+        %tbody{
+          
+          %tr{
+            
+          }
+        }
+        
+      }
+      
+    }
+    //価格情報入力箇所
+    .feature-area__list.item-price {
+    }
+    //出品情報入力箇所
+    .feature-area__list.item-exhibit {
+    }
+  }
+  
+  .form__submit{
+    background-color: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 1em 4em;
+  }
+}

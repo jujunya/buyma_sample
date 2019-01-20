@@ -1,0 +1,62 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Buyma_items
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body#my
+    .wrapper
+      <!--全ページ共通、最上部コンテンツ-->
+      = render 'layouts/notifications'
+      = render 'layouts/header-main'
+      
+      <!--メインコンテンツ-->
+      .main-contents.clearfix
+      
+        <!--leftコンテンツ-->
+        .left-contents
+          .left-profile
+          %nav.left-nav
+            %ul.mypage-contents
+              %li.contents__list.contents__list-home
+                %a.link-contents.home-link
+                  = fa_icon 'home'
+                  ホーム
+              %li.contents__list.contents__list-sales
+                %a.link-contents.sales-link
+                  = fa_icon 'book'
+                  販売管理
+              %li.contents__list.contents__list-inquiry
+                %a.link-contents.inquiry-link
+                  = fa_icon 'envelope-open'
+                  問い合わせ
+              %li.contents__list.contents__list-request
+                %a.link-contents.request-link
+                  = fa_icon 'volume-down'
+                  リクエスト
+              %li.contents__list.contents__list-exhibit
+                %a.link-contents.exhibit-link
+                  = fa_icon 'tags'
+                  出品
+              %li.contents__list.contents__list-exhibitmane
+                %a.link-contents.exhibitmane-link
+                  = fa_icon 'shopping-basket'
+                  出品管理
+              %li.contents__list.contents__list-promotion
+                %a.link-contents.promotion-link
+                  = fa_icon 'paperclip'
+                  販売ツール
+              %li.contents__list.contents__list-buymaEng
+                %a.link-contents.buymaEng-link
+                  = fa_icon 'globe'
+                  英語版 BUYMA
+              %li.contents__list.contents__list-switch
+                %a.link-contents.switch-link
+                  = fa_icon 'toggle-on'
+                  購入者にスイッチ
+                  
+        <!--rightコンテンツ-->
+        .right-contents
+          = yield

@@ -8,29 +8,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .wrapper
+      <!--広告表示-->
       .announce
         .announce-image
           = image_tag 'pc_header.jpg'
-      .header-main
-        .header-main-logo
-          = image_tag 'logo.png'
-        %ul.header-icon-nav
-          %li.icon-nav__list.membership-register
-            %a
-              今すぐ会員登録
-          %li.icon-nav__list.membership-login
-            %a
-              ログイン
-          %li.icon-nav__list.icon-want
-            %a
-              = fa_icon 'heart'
-          %li.icon-nav__list.icon-cart
-            %a
-              = fa_icon 'shopping-cart'
-          %li.icon-nav__list.icon-question
-            %a
-              = fa_icon 'question'
-      .header-nav
+          
+      <!--最上部コンテンツ-->
+      =render 'layouts/header-main'
+      
+      <!--カテゴリコンテンツ-->
+      %nav.header-nav
         %ul.main-cate
           %li.main-cate__list.main-cate__list-sale
             .sale-logo
@@ -61,12 +48,11 @@
               %a.allin-link
                 <!--仮-->
                 = image_tag 'tab_home.png'
+      
+      <!--検索窓 未記入-->
       .header-search
         .search-form
-          
         .search-list
-          
       = yield
-      
       .footer
         = image_tag 'footer.jpg'

@@ -11,10 +11,10 @@ CarrierWave.configure do |config|
       aws_access_key_id: Rails.application.secrets.aws_access_key_id,
       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
       region: 'ap-northeast-1',
-      bucket: 'chat-space-jun-test1'
+      bucket: 'buyma-image'
     }
   
   
-  config.fog_directory  = 'chat-space-jun-test1'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-jun-test1'
+  config.fog_directory  = 'buyma-image'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/buyma-image'
 end

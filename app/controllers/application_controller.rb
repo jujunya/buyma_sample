@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   private
   
-  Basic認証
+#  Basic認証
   def production?
     Rails.env.production?
   end

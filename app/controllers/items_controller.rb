@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-#    render layout: 'mypage'
+    render layout: 'mypage'
   end
   
   def create

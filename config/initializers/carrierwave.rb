@@ -17,6 +17,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1',
       bucket: 'buyma-image'
     }
+  end
   
   
   config.fog_directory  = 'buyma-image'

@@ -39,22 +39,40 @@ form.exhibit-submit {
       }
     //商品情報入力箇所
     .feature-area__item-data {
+        
+      
       h1.item-data-info{
         font-family: "Hiragino Kaku Gothic ProN";
         font-weight: 700;
         color: #6f6f6f;
       }
-      table.item-data-table{
+      .item-table{
+        width: 100%;
         
-        %tbody{
-          
-          %tr{
-            
+        .item-table__tr{
+          height: 100px;
+
+          .item-table__th{
+            width: 330px;
+            padding: 10px;
+            background-color: #EEEEEE;
+          }
+          .item-table__td{
+            padding: 10px;
+
+            .dropzone {
+              border: 2px dashed #b4bcc2;
+              width: 200px;
+
+              .dz-message {
+                font-size: 16px;
+                text-align: center;
+                margin: 0
+              }
+            }
           }
         }
-        
       }
-      
     }
     //価格情報入力箇所
     .feature-area__list.item-price {

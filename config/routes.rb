@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :shops do
     resources :items, only: [:new, :create]
   end
+  
+  get  "/shops/:shop_id/items/new "=> "item#create"
+  get "/images" => "item#create"
+
 end

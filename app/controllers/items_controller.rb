@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
   end
   
   def new
+    @image = Image.new
+    @categories = Category.all
     @item = Item.new
     @item.images.build
     render layout: 'mypage'
@@ -26,7 +28,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :price, :stock, :item_description, size_ids: [], images_attributes: [:name]).merge(item_num: 10, shop_id: 1, category_id: 1)
+    params.require(:item).permit(:name, :price, :stock, :item_description, :category_id, size_ids: [], images_attributes: [:name]).merge(item_num: 10, shop_id: 1)
   
   end
   

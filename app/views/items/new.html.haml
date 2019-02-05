@@ -5,7 +5,7 @@
   .exhibit__fixed-info
   <!--主要部分-->
   .feature-area
-  
+
     <!--過去の出品情報コピー-->
     .feature-area__item-copy
       .item-copy-w
@@ -14,48 +14,56 @@
           過去の出品情報をコピーする
         %span.button-copy-text
           過去の出品情報をコピーして簡単に出品が可能です
-          
+
     <!--商品情報入力箇所-->
     .feature-area__item-data
       %h1.item-data-info 商品情報
       %table.item-table{:border => "1", :cellpadding => "5", :cellspacing => "2"}
         %tbody
           %tr.item-table__tr
-            %th カテゴリ
-            %td
+            %th.item-table__th カテゴリ
+            %td.item-table__td
               %table
                 %tbody
                   %tr
                     %td
-                      %a{:href => "/"} 検索する
-                    %td 直近で出品したカテゴリから選択
+                      = f.select :category_id, [["ドレス", 1], ["ワンピース", 2]]
           %tr.item-table__tr
-            %th 商品名
-            %td
+            %th.item-table__th 商品名
+            %td.item-table__td
               = f.text_field :name, placeholder: "商品名"
           %tr.item-table__tr
-            %th サイズ
-            %td
+            %th.item-table__th サイズ
+            %td.item-table__td
               %label
                 - @sizes.each do |size|
                   %label
                     = f.check_box :size_ids, {multiple: true, include_hidden: false, checked: size[:checked], disabled: size[:disabled] }, size[:id]
                     = size[:size]
           %tr.item-table__tr
-            %th 商品イメージ
-            %td
-              = f.fields_for :images do |image|
-                = image.file_field :name
+            %th.item-table__th 商品イメージ
+            %td.item-table__td
+              = f.fields_for(:images, {multipart: true, id: "item-dropzone", class: "dropzone"}) do |image|
+                .dz-message.needsclick
+                  %h3 画像選択
+                  = image.file_field :name
           %tr.item-table__tr
-            %th 商品コメント
-            %td
+            %th.item-table__th 商品コメント
+            %td.item-table__td
               = f.text_area :item_description, placeholder: "コメント"
           %tr.item-table__tr
-            %th 在庫
-            %td
+            %th.item-table__th 在庫
+            %td.item-table__td
               = f.number_field :stock
+              個
           %tr.item-table__tr
-            %th 価格
-            %td
+            %th.item-table__th 価格
+            %td.item-table__td
               = f.text_field :price, placeholder: "価格"
+              円
   = f.submit '入力内容を確認する', class: 'form__submit'
+
+= form_for(@image, html: {multipart: true, class: "dropzone", id: "item-dropzone"}) do |f|
+  .dz-message.needsclick
+    %h3 画像選択
+  = f.submit '入力内容を確認する', class: 'form__submitt'

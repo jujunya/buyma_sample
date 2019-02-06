@@ -62,8 +62,3 @@
               = f.text_field :price, placeholder: "価格"
               円
   = f.submit '入力内容を確認する', class: 'form__submit'
-
-= form_for(@image, html: {multipart: true, class: "dropzone", id: "item-dropzone"}) do |f|
-  .dz-message.needsclick
-    %h3 画像選択
-  = f.submit '入力内容を確認する', class: 'form__submitt'

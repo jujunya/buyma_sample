@@ -76,3 +76,4 @@ end
   gem 'fog-aws'
   gem 'dropzonejs-rails'
   gem 'jquery-rails'
+  gem 'ezdz-rails'

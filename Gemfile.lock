@@ -95,6 +95,8 @@ GEM
     erubis (2.7.0)
     excon (0.62.0)
     execjs (2.7.0)
+    ezdz-rails (0.5.1)
+      railties (>= 3.2, < 6.0)
     ffi (1.9.25)
     fog-aws (3.3.0)
       fog-core (~> 2.1)
@@ -279,6 +281,7 @@ DEPENDENCIES
   devise
   dropzonejs-rails
   erb2haml
+  ezdz-rails
   fog-aws
   font-awesome-rails
   haml-rails

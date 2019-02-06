@@ -6,7 +6,9 @@ class ItemsController < ApplicationController
   end
   
   def new
+#    dropzone確認のための仮入力
     @image = Image.new
+    
     @categories = Category.all
     @item = Item.new
     @item.images.build
@@ -28,6 +30,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
+    
     params.require(:item).permit(:name, :price, :stock, :item_description, :category_id, size_ids: [], images_attributes: [:name]).merge(item_num: 10, shop_id: 1)
   
   end

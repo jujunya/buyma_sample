@@ -1,4 +1,4 @@
-server '52.69.116.153', user: 'ec2-user', roles: %w{app db web}
+server '13.230.14.208', user: 'ec2-user', roles: %w{app db web}
 
 #basic認証
 set :rails_env, "production"

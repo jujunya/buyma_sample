@@ -13,7 +13,7 @@
   width:120px;
   height:120px;
   overflow:hidden;
-  font:bold 15px arial;
+  font:bold 15px "arial";
   line-height:200px;color:lightgray;
   text-align:center;border:10px dotted lightgray;
   border-radius:20px
@@ -29,8 +29,8 @@
   background:black;
     background:rgba(0,0,0,0.7);
     border-radius:20px
-}.
-ezdz-dropzone img{
+}
+.ezdz-dropzone img{
   max-width:95%;
   max-height:95%;
   margin-top:-3px;
@@ -54,8 +54,8 @@ ezdz-dropzone img{
 }
 .ezdz-accept{
   color:gray;border:10px solid gray
-}.
-ezdz-reject{
+}
+.ezdz-reject{
   color:darkred;
   border:10px solid darkred
 }

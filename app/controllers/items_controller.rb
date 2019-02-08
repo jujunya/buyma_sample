@@ -6,17 +6,14 @@ class ItemsController < ApplicationController
   end
   
   def new
-#    dropzone確認のための仮入力
-    @image = Image.new
-    
     @categories = Category.all
     @item = Item.new
-    @item.images.build
+    10.times{@item.images.build}
     render layout: 'mypage'
   end
   
   def create
-
+    
     item = Item.new(item_params)
     
     if item.save
@@ -31,7 +28,10 @@ class ItemsController < ApplicationController
   
   def item_params
     
-    params.require(:item).permit(:name, :price, :stock, :item_description, :category_id, size_ids: [], images_attributes: [:name]).merge(item_num: 10, shop_id: 1)
+    item_num_max = Item.maximum('item_num')
+    (item_num_max == nil)? (add_item_num = 1000) : (add_item_num = item_num_max + 1)
+    
+    params.require(:item).permit(:name, :price, :stock, :item_description, :category_id, size_ids: [], images_attributes: [:name]).merge(item_num: add_item_num, shop_id: 1)
   
   end
   

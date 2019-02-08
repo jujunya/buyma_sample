@@ -77,3 +77,4 @@ end
   gem 'dropzonejs-rails'
   gem 'jquery-rails'
   gem 'ezdz-rails'
+  gem 'rubocop', require: false

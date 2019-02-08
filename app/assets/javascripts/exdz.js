@@ -1,11 +1,10 @@
 $(function(){
-  console.log("ezdzテスト");
 
 $('[type="file"]').ezdz({
             text: 'drop a picture',
             validators: {
-                maxWidth:  2000,
-                maxHeight: 2000,
+                maxWidth:  1000,
+                maxHeight: 1000,
                 maxSize: 1000000
             },
             reject: function(file, errors) {

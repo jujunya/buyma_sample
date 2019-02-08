@@ -45,8 +45,9 @@
             %td.item-table__td
               = f.fields_for(:images, {multipart: true, id: "item-dropzone", class: "dropzone"}) do |image|
                 .dz-message.needsclick
-                  %h3 画像選択
-                  = image.file_field :name
+                  %ul.image-area
+                    %li.image_area__add
+                      = image.file_field :name
           %tr.item-table__tr
             %th.item-table__th 商品コメント
             %td.item-table__td

@@ -3,10 +3,7 @@ Rails.application.routes.draw do
   root 'tops#index'
   
   resources :shops do
-    resources :items, only: [:new, :create]
+    resources :items
   end
-  
-  get  "/shops/:shop_id/items/new "=> "item#create"
-  get "/images" => "item#create"
 
 end

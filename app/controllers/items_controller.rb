@@ -2,8 +2,25 @@ class ItemsController < ApplicationController
   before_action :set_shop, :set_size
   
   def index
-    
+#    外部テーブルから画像情報
+    @item_all = Item.all
+    @item = []
+    @images = []
+    @shops = []
+    @item_all.each_with_index do |item, i|
+      @item[i] = item
+      @images[i] = item.images
+      @shops[i] = item.shop
+    end
   end
+  
+  def show
+    @item_all.each_with_index do |item, i|
+      @item[i] = item
+      @images[i] = item.images
+    end
+  end
+  
   
   def new
     @categories = Category.all

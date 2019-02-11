@@ -1,0 +1,81 @@
+.content{
+    background-color: #F3F3F3;
+
+  .item-ResultList{
+      padding-top: 20px;
+      width: 980px;
+      margin: 0 auto;
+
+    .card-list {
+        width: 225px;
+        height: 426px;
+        margin: 0 20px 20px 0;
+        padding: 8px 0;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 3px 6px #ccc;
+        display:inline-block;
+
+      .card-top{
+          padding: 0 8px 8px 8px;
+          border-bottom: 1px solid #e3e3e3;
+
+        .product_image {
+            width: 210px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 5px 5px 0 0;
+        }
+      }
+      .card-body{
+          padding: 8px 8px 0 8px;
+
+         .product-name {
+              font-family: "Hiragino Kaku Gothic ProN";
+              font-size: 13px;
+              color: #606060;
+          }
+          .product_price_detail {
+              width: 210px;
+              height: 50px;
+              font-family: "Hiragino Kaku Gothic ProN";
+              font-size: 16px;
+            
+            .price_text {
+                color: #ff3259;
+            }
+            
+            .souryu{
+                font-size: 12px;
+                color: #545454;
+            }
+          }
+          .product_shop{
+              width: 210px;
+              font-size: 12px;
+              color: #777777;
+          }
+      }
+    }
+    .card-list:nth-child(4n) {
+        width: 227px;
+        height: 426px;
+        margin: 0 0 20px 0;
+        padding: 8px 0;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 3px 6px #ccc;
+        display:inline-block;
+    }
+    
+    .card-list:nth-child(4n+1) {
+        width: 227px;
+        height: 426px;
+        margin: 0 20px 20px 0;
+        padding: 8px 0;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 3px 6px #ccc;
+    }
+  }
+}

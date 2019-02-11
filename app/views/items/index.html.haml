@@ -1,0 +1,25 @@
+.content
+  .item-ResultList
+    %ul
+      - if @images.length == 1
+        - @images[0].each do |image_u|
+          %li
+            = image_tag image_u.name
+      - else
+        - for i in 0..(@images.length - 1)
+          - @images[i].each_with_index do |image_u, e|
+            - if e == 0
+              %li.card-list
+                .card-top
+                  = image_tag image_u.name, class:"product_image"
+                .card-body
+                  .product-name
+                    = @item[i].name
+                  .product_price_detail
+                    %strong.price_text
+                      ¥
+                      = @item[i].price
+                    %strong.souryu
+                      送料込み
+                  .product_shop
+                    = @shops[i].name
